@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import type { Project } from "../lib/projects";
 import AliasDemo from "./demos/AliasDemo";
+import ImdbConnectDemo from "./demos/ImdbConnectDemo";
 
 type Props = {
   projects: Project[];
@@ -54,7 +55,7 @@ export function ExtensionsSection({ projects }: Props) {
               {/* Main Row - Clickable */}
               <button
                 onClick={() => setExpanded(isExpanded ? null : project.name)}
-                className="group w-full flex items-baseline justify-between py-6 text-left"
+                className="group w-full flex items-baseline justify-between pb-3 pt-6 text-left"
               >
                 <div className="flex flex-col items-start gap-1 flex-1">
                   <span className="text-xl font-medium group-hover:text-white transition-colors">
@@ -83,19 +84,17 @@ export function ExtensionsSection({ projects }: Props) {
               {/* Expanded Details */}
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  isExpanded ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
+                  isExpanded ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
                 <div className="pb-6 space-y-6 border-t border-neutral-900 pt-6">
-                  {/* Demo - Show for Alias extension */}
-                  {project.name === "Alias" && (
                     <div className="space-y-3">
-                      <h4 className="text-xs font-mono text-neutral-600 uppercase tracking-wider mb-2">
-                        Demo
-                      </h4>
-                      <AliasDemo />
+                      {project.name == 'Alias' ? (
+                        <AliasDemo />
+                      ) : (
+                        <ImdbConnectDemo />
+                      )}
                     </div>
-                  )}
 
                   {/* Features */}
                   {project.features && project.features.length > 0 && (
