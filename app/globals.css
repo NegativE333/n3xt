@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-obsidian-dark text-white antialiased;
+    background-image: radial-gradient(ellipse at top, rgba(28, 30, 41, 0.3) 0%, transparent 50%);
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(62, 146, 255, 0.3);
+  }
+  
+  .glow-violet {
+    box-shadow: 0 0 20px rgba(163, 100, 255, 0.3);
+  }
+}
