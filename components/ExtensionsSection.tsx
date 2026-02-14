@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import type { Project } from "../lib/projects";
+import AliasDemo from "./demos/AliasDemo";
 
 type Props = {
   projects: Project[];
@@ -86,6 +87,16 @@ export function ExtensionsSection({ projects }: Props) {
                 }`}
               >
                 <div className="pb-6 space-y-6 border-t border-neutral-900 pt-6">
+                  {/* Demo - Show for Alias extension */}
+                  {project.name === "Alias" && (
+                    <div className="space-y-3">
+                      <h4 className="text-xs font-mono text-neutral-600 uppercase tracking-wider mb-2">
+                        Demo
+                      </h4>
+                      <AliasDemo />
+                    </div>
+                  )}
+
                   {/* Features */}
                   {project.features && project.features.length > 0 && (
                     <div className="space-y-3">

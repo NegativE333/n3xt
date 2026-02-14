@@ -23,12 +23,12 @@ export const projects: Project[] = [
     status: "v1.0",
     href: "https://chrome.google.com/webstore/detail/your-id",
     features: [
-      "Global shortcuts: Works on most sites and apps (Gmail, Notion, GitHub, etc.).",
-      "Trigger keys: Type a shortcut (e.g. /email) then press Space or Enter to expand.",
-      "Rich editor support: Uses document.execCommand('insertText') and proper InputEvents so React/Vue apps and undo history still work.",
-      "Dynamic macros: {{date}} → current date in YYYY-MM-DD, {{clipboard}} → current text from your clipboard, {{tab}} → jumps to the next input and continues typing (form filler).",
-      "Local-only storage: Snippets are saved in chrome.storage.local only.",
-      "Lean UI: Minimal, keyboard-friendly popup to add, inspect, and reset shortcuts.",
+      "Universal Expansion: Works instantly across the web—from standard inputs to rich text editors like Gmail, Notion, and GitHub.",
+      "100% Local & Private: Built on a zero-tracking architecture. Your shortcuts are stored in chrome.storage.local and never leave your browser.",
+      "Dynamic Macros: Supercharge your snippets with variables like {{date}}, {{clipboard}}, and {{tab}} for multi-field form filling.",
+      "JSON Registry: Full control over your data. Easily export, import, and backup your shortcut configuration via raw JSON.",
+      "React/Vue Compatible: Engineered with execCommand events to ensure compatibility with modern web frameworks and undo history.",
+      "Zero-Latency UI: A minimal, keyboard-centric interface designed for instant configuration without breaking your flow.",
     ],
     links: {
       chrome: "https://chrome.google.com/webstore/detail/your-id",
