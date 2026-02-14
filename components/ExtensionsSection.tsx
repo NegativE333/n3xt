@@ -82,19 +82,18 @@ export function ExtensionsSection({ projects }: Props) {
               </button>
 
               {/* Expanded Details */}
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  isExpanded ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="pb-6 space-y-6 border-t border-neutral-900 pt-6">
-                    <div className="space-y-3">
-                      {project.name == 'Alias' ? (
-                        <AliasDemo />
-                      ) : (
-                        <ImdbConnectDemo />
-                      )}
-                    </div>
+              {isExpanded && (
+                <div className="overflow-hidden border-t border-neutral-900 pt-6 pb-6 space-y-6">
+                  <div className="space-y-3">
+                    <h4 className="text-xs font-mono text-neutral-600 uppercase tracking-wider mb-2">
+                      Demo
+                    </h4>
+                    {project.name === "Alias" ? (
+                      <AliasDemo />
+                    ) : (
+                      <ImdbConnectDemo />
+                    )}
+                  </div>
 
                   {/* Features */}
                   {project.features && project.features.length > 0 && (
@@ -145,7 +144,7 @@ export function ExtensionsSection({ projects }: Props) {
                     </div>
                   )}
                 </div>
-              </div>
+              )}
             </div>
           );
               })}

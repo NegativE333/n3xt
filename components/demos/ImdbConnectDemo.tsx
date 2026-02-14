@@ -150,7 +150,7 @@ export default function ImdbConnectDemo() {
                  <span>Romance, Drama</span>
                  
                  <div 
-                    className={`flex items-center bg-[#333]/90 rounded px-1.5 py-0.5 gap-1 transition-all duration-500 transform
+                    className={`flex items-center bg-black/50 rounded px-1.5 py-0.5 gap-1 transition-all duration-500 transform
                       ${showRatings ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}
                     `}
                  >
@@ -175,7 +175,12 @@ export default function ImdbConnectDemo() {
         <div className="px-4 md:px-8 relative z-10 flex-1 mt-1 md:mt-2">
            <div className="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
               {movies.slice(1).map((movie, i) => (
-                 <div key={i} className="aspect-[2.2/3] rounded-lg relative overflow-hidden bg-[#222] group cursor-pointer ring-0 hover:ring-2 ring-white/50 transition-all">
+                 <div 
+                   key={i} 
+                   className={`aspect-[2.2/3] rounded-lg relative overflow-hidden bg-[#222] group cursor-pointer ring-0 hover:ring-2 ring-white/50 transition-all ${
+                     i >= 3 ? 'hidden md:block' : ''
+                   }`}
+                 >
                     <Image 
                       src={movie.image} 
                       alt={movie.title} 
