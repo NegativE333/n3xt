@@ -191,11 +191,12 @@ export default function AliasDemo() {
 
           {/* Footer */}
           <div className="flex justify-between text-[9px] text-[#333] font-bold mt-auto pt-4">
+            <p className="text-white">© N3XT</p>
             <div className="flex gap-3">
              <span>EXPORT</span>
              <span>IMPORT</span>
-            </div>
              <span>RESET_DATA</span>
+            </div>
           </div>
 
         </div>

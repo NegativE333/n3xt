@@ -16,7 +16,6 @@ export default function Home() {
         <Hero />
         <ExtensionsSection projects={projects} />
         <SiteFooter />
-
       </main>
     </div>
   );
