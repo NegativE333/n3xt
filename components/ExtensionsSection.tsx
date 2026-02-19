@@ -5,9 +5,16 @@ import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import type { Project } from "../lib/projects";
 import AliasDemo from "./demos/AliasDemo";
 import ImdbConnectDemo from "./demos/ImdbConnectDemo";
+import DraftDemo from "./demos/DraftDemo";
 
 type Props = {
   projects: Project[];
+};
+
+const demoByName: Record<string, JSX.Element> = {
+  Alias: <AliasDemo />,
+  Draft: <DraftDemo />,
+  "Hotstar IMDb Connect": <ImdbConnectDemo />,
 };
 
 export function ExtensionsSection({ projects }: Props) {
@@ -84,16 +91,11 @@ export function ExtensionsSection({ projects }: Props) {
               {/* Expanded Details */}
               {isExpanded && (
                 <div className="overflow-hidden border-t border-neutral-900 pt-6 pb-6 space-y-6">
-                  <div className="space-y-3">
-                    <h4 className="text-xs font-mono text-neutral-600 uppercase tracking-wider mb-2">
-                      Demo
-                    </h4>
-                    {project.name === "Alias" ? (
-                      <AliasDemo />
-                    ) : (
-                      <ImdbConnectDemo />
-                    )}
-                  </div>
+                  {demoByName[project.name] && (
+                    <div className="space-y-3">
+                      {demoByName[project.name]}
+                    </div>
+                  )}
 
                   {/* Features */}
                   {project.features && project.features.length > 0 && (

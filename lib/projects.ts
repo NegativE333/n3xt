@@ -37,6 +37,24 @@ export const projects: Project[] = [
     category: "Productivity",
   },
   {
+    name: "Draft",
+    description: "Multi-draft browser scratchpad for fast context juggling.",
+    status: "WIP",
+    href: "#",
+    features: [
+      "Manage multiple contexts instantly with a multi-draft sidebar, inline renaming, and pinned tabs that stay exactly where you left them.",
+      "Built on a zero-tracking architecture. Every keystroke auto-saves to chrome.storage.local and never leaves your browser.",
+      "Supercharge your scratchpad with inline slash commands. Type /uuid, /date, or /todo to inject data without breaking your flow.",
+      "Engineered for developers with an instant JSON pretty-printer, live character stats, and an isolated inline search (Cmd+F) for the active draft.",
+      "A minimal, distraction-free editor featuring persistent dark/light modes and word-wrap toggles for complete visual control.",
+      "A lightning-fast, keyboard-centric interface designed for speed, with dedicated shortcuts for creating drafts and seamless workspace navigation.",
+    ],
+    links: {
+      github: "https://github.com/your-repo/draft",
+    },
+    category: "Productivity",
+  },
+  {
     name: "Hotstar IMDb Connect",
     description: "IMDb ratings overlay for Hotstar.",
     status: "v1.0",
