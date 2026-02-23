@@ -55,6 +55,24 @@ export const projects: Project[] = [
     category: "Productivity",
   },
   {
+    name: "Vanish",
+    description: "A keyboard-driven tool to instantly remove web distractions, save domain-specific blocklists, and seamlessly extract clean text.",
+    status: "WIP",
+    href: "#",
+    features: [
+      "Instant Element Removal: Press Cmd+Shift+X to instantly target and delete popups, cookie banners, and sticky headers from any webpage.",
+      "Persistent Domain Blocking: Elements you remove stay gone. Automatically saves CSS paths to block targets on all future visits to that specific domain.",
+      "Data Extraction Mode: Hold Shift to transform the reticle into a scanner, bypassing native browser highlighting to copy clean text directly to your clipboard.",
+      "Session History & Undo: Fully forgiving architecture. Use Cmd+Z to restore accidentally removed elements, or press 'C' to instantly clear a domain's entire blocklist.",
+      "100% Local & Private: Built on a zero-tracking architecture. Your custom blocklists are stored securely in chrome.storage.local and never leave your browser.",
+      "Zero-Friction UI: A lightweight, keyboard-centric overlay that tracks your active mode and blocked elements without disrupting your workflow.",
+    ],
+    links: {
+      github: "https://github.com/your-repo/vanish",
+    },
+    category: "Productivity",
+  },
+  {
     name: "Hotstar IMDb Connect",
     description: "IMDb ratings overlay for Hotstar.",
     status: "v1.0",

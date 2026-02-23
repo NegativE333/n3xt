@@ -6,6 +6,7 @@ import type { Project } from "../lib/projects";
 import AliasDemo from "./demos/AliasDemo";
 import ImdbConnectDemo from "./demos/ImdbConnectDemo";
 import DraftDemo from "./demos/DraftDemo";
+import VanishDemo from "./demos/VanishDemo";
 
 type Props = {
   projects: Project[];
@@ -14,6 +15,7 @@ type Props = {
 const demoByName: Record<string, JSX.Element> = {
   Alias: <AliasDemo />,
   Draft: <DraftDemo />,
+  Vanish: <VanishDemo />,
   "Hotstar IMDb Connect": <ImdbConnectDemo />,
 };
 
