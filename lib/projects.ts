@@ -39,7 +39,7 @@ export const projects: Project[] = [
   {
     name: "Draft",
     description: "Multi-draft browser scratchpad for fast context juggling.",
-    status: "WIP",
+    status: "v1.0",
     href: "#",
     features: [
       "Manage multiple contexts instantly with a multi-draft sidebar, inline renaming, and pinned tabs that stay exactly where you left them.",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
   {
     name: "Vanish",
     description: "A keyboard-driven tool to instantly remove web distractions, save domain-specific blocklists, and seamlessly extract clean text.",
-    status: "WIP",
+    status: "v1.0",
     href: "#",
     features: [
       "Instant Element Removal: Press Cmd+Shift+X to instantly target and delete popups, cookie banners, and sticky headers from any webpage.",
