@@ -31,8 +31,7 @@ export const projects: Project[] = [
       "Zero-Latency UI: A minimal, keyboard-centric interface designed for instant configuration without breaking your flow.",
     ],
     links: {
-      chrome: "https://chrome.google.com/webstore/detail/your-id",
-      github: "https://github.com/your-repo/alias",
+      github: "https://github.com/NegativE333/alias",
     },
     category: "Productivity",
   },
@@ -50,7 +49,7 @@ export const projects: Project[] = [
       "A lightning-fast, keyboard-centric interface designed for speed, with dedicated shortcuts for creating drafts and seamless workspace navigation.",
     ],
     links: {
-      github: "https://github.com/your-repo/draft",
+      github: "https://github.com/NegativE333/draft",
     },
     category: "Productivity",
   },
@@ -68,7 +67,7 @@ export const projects: Project[] = [
       "Zero-Friction UI: A lightweight, keyboard-centric overlay that tracks your active mode and blocked elements without disrupting your workflow.",
     ],
     links: {
-      github: "https://github.com/your-repo/vanish",
+      github: "https://github.com/NegativE333/vanish",
     },
     category: "Productivity",
   },
@@ -87,8 +86,7 @@ export const projects: Project[] = [
       'Free Activation: Built on a "Bring Your Own Key" architecture—simply paste your free OMDb API key to start.',
     ],
     links: {
-      chrome: "https://chrome.google.com/webstore/detail/your-id",
-      github: "https://github.com/your-repo/signal",
+      github: "https://github.com/NegativE333/hotstar-imdb-extension",
     },
     category: "Entertainment",
   },
