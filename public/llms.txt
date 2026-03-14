@@ -1,0 +1,7 @@
+# llms.txt – guidelines for AI crawlers
+# See: https://platform.openai.com/docs/gptbots/llms-txt
+
+User-agent: *
+Allow: /
+
+Sitemap: https://n3xt-iota.vercel.app/sitemap.xml
