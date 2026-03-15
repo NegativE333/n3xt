@@ -7,6 +7,7 @@ import AliasDemo from "./demos/AliasDemo";
 import ImdbConnectDemo from "./demos/ImdbConnectDemo";
 import DraftDemo from "./demos/DraftDemo";
 import VanishDemo from "./demos/VanishDemo";
+import TabTunnelDemo from "./demos/TabTunnelDemo";
 
 type Props = {
   projects: Project[];
@@ -17,6 +18,7 @@ const demoByName: Record<string, JSX.Element> = {
   Draft: <DraftDemo />,
   Vanish: <VanishDemo />,
   "Hotstar IMDb Connect": <ImdbConnectDemo />,
+  TabTunnel: <TabTunnelDemo />,
 };
 
 export function ExtensionsSection({ projects }: Props) {
