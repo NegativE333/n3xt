@@ -110,8 +110,8 @@ export default function TabTunnelDemo() {
 
             {/* === BROWSER VIEW (FULL-WIDTH BACKGROUND) === */}
             <div className={`absolute inset-0 flex flex-col bg-[#050505] transition-all duration-500 ${showPopup ? 'scale-[0.97] blur-[1px] opacity-40 brightness-[0.75]' :
-                    showWebsite ? 'scale-100 opacity-100 blur-0 brightness-100' :
-                        'opacity-0 scale-95'
+                showWebsite ? 'scale-100 opacity-100 blur-0 brightness-100' :
+                    'opacity-0 scale-95'
                 }`}>
                 {/* Browser Top Bar */}
                 <div className="bg-[#141416] border-b border-[#222] px-4 py-3 flex items-center gap-3">
@@ -184,8 +184,8 @@ export default function TabTunnelDemo() {
                                     <div className="bg-[#141416] border border-[#222] rounded px-3 py-2 text-[11px] text-white relative font-mono">
                                         <span
                                             className={`transition-colors ${phase === "website_02" || phase === "command_02" || phase === "popup_02"
-                                                    ? "bg-white/90 text-black"
-                                                    : "bg-transparent text-white"
+                                                ? "bg-white/90 text-black"
+                                                : "bg-transparent text-white"
                                                 }`}
                                         >
                                             {selectedText || "1234 Elm Street, San Francisco, CA 94102"}
@@ -245,34 +245,30 @@ export default function TabTunnelDemo() {
                     <div className="flex items-center bg-[#141416] rounded-full border border-white/10 p-0.5 gap-0.5">
                         <button
                             type="button"
-                            className={`flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-medium tracking-wide transition-all ${
-                                activeMode === 'url'
+                            className={`flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-medium tracking-wide transition-all ${activeMode === 'url'
                                     ? 'bg-neutral-100/10 text-white'
                                     : 'text-[#666]'
-                            }`}
+                                }`}
                             onClick={() => setActiveMode('url')}
                         >
                             <LinkIcon
-                                className={`w-3 h-3 ${
-                                    activeMode === 'url' ? 'text-white' : 'text-[#666]'
-                                }`}
+                                className={`w-3 h-3 ${activeMode === 'url' ? 'text-white' : 'text-[#666]'
+                                    }`}
                             />
                             <span>URL</span>
                         </button>
 
                         <button
                             type="button"
-                            className={`flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-medium tracking-wide transition-all ${
-                                activeMode === 'text'
+                            className={`flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-medium tracking-wide transition-all ${activeMode === 'text'
                                     ? 'bg-neutral-100/10 text-white'
                                     : 'text-[#666]'
-                            }`}
+                                }`}
                             onClick={() => setActiveMode('text')}
                         >
                             <Type
-                                className={`w-3 h-3 ${
-                                    activeMode === 'text' ? 'text-white' : 'text-[#666]'
-                                }`}
+                                className={`w-3 h-3 ${activeMode === 'text' ? 'text-white' : 'text-[#666]'
+                                    }`}
                             />
                             <span>Text</span>
                         </button>
@@ -291,7 +287,8 @@ export default function TabTunnelDemo() {
                                     src={activeMode === 'url' ? '/images/demo/qr1.png' : '/images/demo/qr2.png'}
                                     alt="QR Code"
                                     fill
-                                    className="object-contain rounded"
+                                    className="object-contain"
+                                    priority
                                 />
                             </div>
                         )}
