@@ -257,7 +257,7 @@ export default function ImdbConnectDemo() {
 
            {/* Footer */}
            <div className="flex justify-between items-center pt-1">
-              <span className="text-[#666] text-[10px]">© N3XT</span>
+              <span className="text-[#666] text-[10px]">© N3xt</span>
               <button className="border border-[#2e323e] text-[#888] text-[10px] px-3 py-1 rounded-full hover:bg-[#1e2029] transition-colors">
                  Clear Cache
               </button>

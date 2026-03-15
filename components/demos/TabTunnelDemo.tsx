@@ -94,13 +94,13 @@ export default function TabTunnelDemo() {
         <div className="w-full max-w-xl mx-auto h-[480px] md:h-[500px] relative font-sans antialiased bg-black rounded-xl overflow-hidden border border-[#222] shadow-2xl">
 
             {/* === FEATURE LABEL OVERLAY === */}
-            <div className={`pointer-events-none absolute left-1/2 top-[40%] -translate-x-1/2 z-40 transition-all duration-500 ${phase.includes("label") ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+            <div className={`pointer-events-none absolute left-1/2 top-[40%] -translate-x-1/2 z-40 transition-all duration-500 w-full max-w-[80%] md:max-w-xs ${phase.includes("label") ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
                 }`}>
-                <div className="flex flex-col items-center text-center gap-1 rounded-xl bg-black/80 border border-white/10 px-4 py-3 backdrop-blur-sm">
+                <div className="flex flex-col items-center text-center gap-1 rounded-xl bg-black/40 border border-white/10 px-4 py-3 backdrop-blur-sm">
                     <p className="text-[10px] font-mono uppercase tracking-[0.3em] text-neutral-400">
                         {isFeature01 ? "Feature 01" : "Feature 02"}
                     </p>
-                    <p className="text-[11px] text-neutral-100 font-medium leading-relaxed">
+                    <p className="text-[11px] md:text-[12px] text-neutral-100 font-medium leading-relaxed">
                         {isFeature01
                             ? "Share this tab to your phone with a scannable QR."
                             : "Share selected text (like an address) directly to your phone."}
@@ -209,8 +209,8 @@ export default function TabTunnelDemo() {
 
             {/* Global command overlay (like Vanish demo) */}
             {showCommand && (
-                <div className="pointer-events-none absolute inset-0 flex items-center justify-center z-40">
-                    <div className="flex items-center gap-4 rounded-full border border-white/20 bg-black/95 px-6 py-3 text-[12px] text-neutral-100 shadow-[0_20px_60px_rgba(0,0,0,0.9)]">
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center z-40 mx-2">
+                    <div className="flex flex-col md:flex-row items-center gap-3 md:gap-4 rounded-full border border-white/20 bg-black/95 px-16 md:px-6 py-3 text-[12px] text-neutral-100 shadow-[0_20px_60px_rgba(0,0,0,0.9)]">
                         <div className="flex gap-1.5">
                             <kbd className="min-w-[26px] px-2 py-1 bg-[#141416] border border-[#555] rounded-md text-[10px] text-white text-center">
                                 ⌘
@@ -222,7 +222,7 @@ export default function TabTunnelDemo() {
                                 P
                             </kbd>
                         </div>
-                        <span className="uppercase font-mono tracking-[0.2em] text-[10px] text-neutral-50">
+                        <span className="uppercase font-mono tracking-[0.2em] text-[9px] md:text-[10px] text-neutral-50 text-center">
                             {isFeature01 ? "Send tab to phone" : "Send selected text to phone"}
                         </span>
                     </div>
@@ -241,9 +241,41 @@ export default function TabTunnelDemo() {
                         <span className="text-xs font-bold text-white tracking-tight">TabTunnel</span>
                         <div className="w-1.5 h-1.5 rounded-full bg-[#3ddc84] animate-pulse" />
                     </div>
-                    <div className="flex bg-white/5 p-0.5 rounded-full border border-white/5">
-                        <div className={`px-3 py-1 rounded-full text-[9px] font-bold transition-all ${activeMode === 'url' ? 'bg-white/10 text-white' : 'text-[#555]'}`}>URL</div>
-                        <div className={`px-3 py-1 rounded-full text-[9px] font-bold transition-all ${activeMode === 'text' ? 'bg-white/10 text-white' : 'text-[#555]'}`}>TEXT</div>
+                    {/* Mode toggle – matches real extension */}
+                    <div className="flex items-center bg-[#141416] rounded-full border border-white/10 p-0.5 gap-0.5">
+                        <button
+                            type="button"
+                            className={`flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-medium tracking-wide transition-all ${
+                                activeMode === 'url'
+                                    ? 'bg-neutral-100/10 text-white'
+                                    : 'text-[#666]'
+                            }`}
+                            onClick={() => setActiveMode('url')}
+                        >
+                            <LinkIcon
+                                className={`w-3 h-3 ${
+                                    activeMode === 'url' ? 'text-white' : 'text-[#666]'
+                                }`}
+                            />
+                            <span>URL</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            className={`flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-medium tracking-wide transition-all ${
+                                activeMode === 'text'
+                                    ? 'bg-neutral-100/10 text-white'
+                                    : 'text-[#666]'
+                            }`}
+                            onClick={() => setActiveMode('text')}
+                        >
+                            <Type
+                                className={`w-3 h-3 ${
+                                    activeMode === 'text' ? 'text-white' : 'text-[#666]'
+                                }`}
+                            />
+                            <span>Text</span>
+                        </button>
                     </div>
                 </div>
 
@@ -283,7 +315,7 @@ export default function TabTunnelDemo() {
 
                 {/* Footer */}
                 <div className="px-4 py-3 border-t border-white/5 flex justify-between items-center">
-                    <span className="text-[9px] text-[#333] font-bold">© N3XT</span>
+                    <span className="text-[9px] text-[#333] font-bold">© N3xt</span>
                     <div className="flex gap-1 items-center opacity-40">
                         <kbd className="px-1 py-0.5 bg-[#141416] border border-[#222] rounded text-[8px] text-white">⌘</kbd>
                         <kbd className="px-1 py-0.5 bg-[#141416] border border-[#222] rounded text-[8px] text-white">⇧</kbd>
@@ -299,7 +331,7 @@ export default function TabTunnelDemo() {
         @keyframes qr-fade {
           0% {
             opacity: 0;
-            transform: scale(0.98);
+            transform: scale(0.99);
           }
           100% {
             opacity: 1;

@@ -1,4 +1,4 @@
-// Central data source for N3XT extensions
+// Central data source for N3xt extensions
 // Edit this array to add or update projects shown on the site.
 
 export type Project = {

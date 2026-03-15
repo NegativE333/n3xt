@@ -11,7 +11,7 @@ export function Hero() {
       className="mb-24 text-center max-w-3xl mx-auto"
     >
       <p className="mb-4 text-xs font-mono uppercase tracking-wider text-neutral-600">
-        N3XT · Browser Extension Studio
+        N3xt · Browser Extension Studio
       </p>
 
       <motion.h1

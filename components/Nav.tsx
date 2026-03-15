@@ -9,7 +9,7 @@ export function Nav() {
         <div className="relative h-4 w-20">
           <Image
             src="/images/logo/n3xt-logo.png"
-            alt="N3XT"
+            alt="N3xt"
             fill
             className="object-contain"
             priority

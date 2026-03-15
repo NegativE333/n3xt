@@ -1,6 +1,6 @@
-# N3XT - Premium Browser Extensions
+# N3xt - Premium Browser Extensions
 
-A single-page portfolio website for N3XT, a digital studio building premium browser extensions.
+A single-page portfolio website for N3xt, a digital studio building premium browser extensions.
 
 ## Tech Stack
 
