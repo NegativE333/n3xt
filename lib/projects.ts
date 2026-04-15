@@ -16,7 +16,33 @@ export type Project = {
   category?: string;
 };
 
+export function toProjectSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 export const projects: Project[] = [
+  {
+    name: "Finn",
+    description:
+      "AI-powered personal finance assistant on Telegram that tracks expenses, debts, budgets, and income through natural language.",
+    status: "v1.0",
+    href: "#",
+    features: [
+      "Natural-Language Tracking: Send plain-text messages like \"spent 500 on groceries\" or \"owe Rahul 2k\" and Finn parses, categorizes, and logs every transaction instantly.",
+      "Income Ledger & Auto-Credit: Define your monthly salary once—Finn auto-posts it on payday and builds a live cash-flow summary of income vs expenses vs remaining balance.",
+      "Smart Budgets & Nudges: Set per-category spending limits and receive contextual nudges when you're approaching or exceeding them, encouraging better financial behavior.",
+      "Debt & Settlement Engine: Track who owes whom, log partial repayments, and get a consolidated net-balance view across all your contacts at any time.",
+      "Scheduled Automation: Recurring reminders, weekly digests, and salary auto-credit run on a resilient job scheduler with retries—so nothing slips through the cracks.",
+      "CSV Export & Undo-Safe Workflows: Export your full transaction history as CSV, and confidently undo any logged entry—every mutation is reversible by design.",
+    ],
+    links: {
+      github: "https://github.com/NegativE333/finn",
+    },
+    category: "AI",
+  },
   {
     name: "Alias",
     description: "Privacy-first text expander with keyboard shortcuts.",
@@ -109,4 +135,9 @@ export const projects: Project[] = [
     category: "Entertainment",
   },
 ];
+
+export function findProjectBySlug(slug?: string): Project | undefined {
+  if (!slug) return undefined;
+  return projects.find((project) => toProjectSlug(project.name) === slug);
+}
 

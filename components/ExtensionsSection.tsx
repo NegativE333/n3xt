@@ -1,19 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
-import type { Project } from "../lib/projects";
+import { findProjectBySlug, type Project } from "../lib/projects";
 import AliasDemo from "./demos/AliasDemo";
 import ImdbConnectDemo from "./demos/ImdbConnectDemo";
 import DraftDemo from "./demos/DraftDemo";
 import VanishDemo from "./demos/VanishDemo";
 import TabTunnelDemo from "./demos/TabTunnelDemo";
+import FinnDemo from "./demos/FinnDemo";
 
 type Props = {
   projects: Project[];
+  initialProjectSlug?: string;
 };
 
 const demoByName: Record<string, JSX.Element> = {
+  Finn: <FinnDemo />,
   Alias: <AliasDemo />,
   Draft: <DraftDemo />,
   Vanish: <VanishDemo />,
@@ -21,8 +24,32 @@ const demoByName: Record<string, JSX.Element> = {
   TabTunnel: <TabTunnelDemo />,
 };
 
-export function ExtensionsSection({ projects }: Props) {
+export function ExtensionsSection({ projects, initialProjectSlug }: Props) {
   const [expanded, setExpanded] = useState<string | null>(null);
+  const projectRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const hasAutoScrolled = useRef(false);
+
+  const initialProjectName = useMemo(() => {
+    return findProjectBySlug(initialProjectSlug)?.name ?? null;
+  }, [initialProjectSlug]);
+
+  useEffect(() => {
+    if (!initialProjectName) return;
+    setExpanded(initialProjectName);
+  }, [initialProjectName]);
+
+  useEffect(() => {
+    if (!initialProjectName || expanded !== initialProjectName || hasAutoScrolled.current) {
+      return;
+    }
+
+    const el = projectRefs.current[initialProjectName];
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 120;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+      hasAutoScrolled.current = true;
+    }
+  }, [expanded, initialProjectName]);
 
   // Group projects by category
   const groupedProjects = projects.reduce((acc, project) => {
@@ -35,7 +62,7 @@ export function ExtensionsSection({ projects }: Props) {
   }, {} as Record<string, Project[]>);
 
   // Define category order
-  const categoryOrder = ["Productivity", "Entertainment", "Other"];
+  const categoryOrder = ["AI", "Productivity", "Entertainment", "Other"];
   const orderedCategories = categoryOrder.filter(
     (cat) => groupedProjects[cat]?.length > 0
   );
@@ -61,6 +88,9 @@ export function ExtensionsSection({ projects }: Props) {
           return (
             <div
               key={project.name}
+              ref={(el) => {
+                projectRefs.current[project.name] = el;
+              }}
               className="border-b border-neutral-900 hover:border-neutral-700 transition-colors duration-300"
             >
               {/* Main Row - Clickable */}
