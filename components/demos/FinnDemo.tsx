@@ -154,7 +154,7 @@ export default function FinnBotDemo() {
         </div>
 
         {/* Chat */}
-        <div ref={chatRef} className="flex-1 overflow-y-auto px-3 py-3 space-y-2.5 scrollbar-hide">
+        <div ref={chatRef} className="finn-chat-scroll flex-1 overflow-y-auto px-3 py-3 space-y-2.5 scrollbar-hide">
           {messages.map((msg) => (
             <div
               key={msg.id}
@@ -267,6 +267,17 @@ export default function FinnBotDemo() {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .finn-chat-scroll {
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* IE/Edge legacy */
+        }
+
+        .finn-chat-scroll::-webkit-scrollbar {
+          display: none; /* Chrome/Safari/Opera */
+        }
+      `}</style>
     </div>
   );
 }
+
